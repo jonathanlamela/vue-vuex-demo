@@ -14,12 +14,14 @@ const total = computed(() => store.getters.getTotal)
 <template>
 
     <div class="flex flex-col space-y-4">
-        <p class="font-bold text-3xl">Preview carrello</p>
-        <div class="flex flex-row">
+        <p class="font-bold text-xl">Preview carrello</p>
+        <div class="flex flex-col space-y-2">
             <CartItemView v-for="item in items" :item="item" />
         </div>
-        <div class="flex">
-            Totale carrello: {{ `${total.toFixed(2)} €` }}
+        <div class="flex flex-row space-x-4">
+            <span class="font-bold">Totale carrello:</span><span>{{ `${total.toFixed(2)} €` }}</span>
         </div>
+
     </div>
+
 </template>

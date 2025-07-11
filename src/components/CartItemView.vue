@@ -23,13 +23,19 @@ function decrease() {
 
 </script>
 <template>
-    <div class="flex flex-col bg-gray-50 p-8 justify-center items-center space-y-4 shadow-md">
-        <p class="text-2xl">{{ item.name }}</p>
-        <p>{{ `${item.price.toFixed(2)} €` }}</p>
-        <p>Qty: {{ item.quantity ?? 0 }}</p>
-        <div class="flex flex-row">
-            <button @click="increase" class="bg-blue-900 hover:bg-blue-950 text-white p-4">+</button>
-            <button @click="decrease" class="bg-blue-900 hover:bg-blue-950 text-white p-4">-</button>
+
+    <div class="card bg-base-100 w-96 shadow-sm">
+
+        <div class="card-body">
+            <div class="flex flex-row items-center">
+                <h2 class="card-title w-2/4">{{ item.name }}</h2>
+                <p class="w-1/4 text-end">{{ `${item.price.toFixed(2)} €` }}</p>
+                <p class="w-1/4 text-end">Qty: {{ item.quantity ?? 0 }}</p>
+            </div>
+            <div class="card-actions justify-end">
+                <button @click="increase" class="btn">+</button>
+                <button @click="decrease" class="btn">-</button>
+            </div>
         </div>
     </div>
 </template>

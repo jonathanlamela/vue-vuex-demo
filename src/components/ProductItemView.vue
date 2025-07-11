@@ -18,9 +18,17 @@ function addToCart() {
 
 </script>
 <template>
-    <div class="flex flex-col bg-gray-50 p-8 justify-center items-center space-y-4 shadow-md">
-        <p class="text-2xl">{{ item.name }}</p>
-        <p>{{ `${item.price.toFixed(2)} €` }}</p>
-        <button @click="addToCart" class="bg-blue-900 hover:bg-blue-950 text-white p-4 rounded-4xl">Add to cart</button>
+
+    <div class="card bg-base-100 w-96 shadow-sm">
+        <figure v-if="item.imageUrl">
+            <img :src="item.imageUrl!" class="w-full h-[200px]" />
+        </figure>
+        <div class="card-body">
+            <h2 class="card-title">{{ item.name }}</h2>
+            <p>{{ `${item.price.toFixed(2)} €` }}</p>
+            <div class="card-actions justify-end">
+                <button class="btn btn-primary" @click="addToCart">Add to cart</button>
+            </div>
+        </div>
     </div>
 </template>

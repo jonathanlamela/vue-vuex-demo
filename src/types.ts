@@ -4,6 +4,7 @@ export type CartState = {
 }
 
 export type ProductItem = {
+    imageUrl?: string;
     productCode: string;
     name: string;
     price: number;
